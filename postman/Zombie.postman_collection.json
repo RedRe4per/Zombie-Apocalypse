@@ -1,0 +1,38 @@
+{
+	"info": {
+		"_postman_id": "a5cf95cf-ade7-423d-83a9-6c4ac77b0958",
+		"name": "Zombie",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20606313"
+	},
+	"item": [
+		{
+			"name": "zombieApocalypse",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"gridSize\": 4,\r\n    \"zombie\": {\r\n        \"x\": 3,\r\n        \"y\": 1\r\n    },\r\n    \"creatures\": [\r\n        {\r\n            \"x\": 0,\r\n            \"y\": 1\r\n        },\r\n        {\r\n            \"x\": 1,\r\n            \"y\": 2\r\n        },\r\n        {\r\n            \"x\": 3,\r\n            \"y\": 2\r\n        }\r\n    ],\r\n    \"commands\": \"DURD\"  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/v1/zombie",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"zombie"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
