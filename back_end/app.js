@@ -12,6 +12,9 @@ app.use(cors());
 app.use(express.json());
 app.use(morgan('combined'));
 app.use(errorHandler);
-app.use('/v1', router);
+//app.use('/v1', router);
+console.log(process.env.DEVroute)
+app.use(process.env.DEVroute, router);
+
 
 module.exports = app;

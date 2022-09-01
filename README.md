@@ -21,7 +21,8 @@ $ npm i
 Add a `.env` file at back_end directory, and then add following code in this file:
 
 ```
-NODE_ENV === 'production'
+NODE_ENV='production'
+DEVroute='/v1'
 PORT=8000
 ```
 

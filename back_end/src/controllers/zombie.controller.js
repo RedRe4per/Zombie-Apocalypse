@@ -25,7 +25,6 @@ async function checkData(data) {
     return validatedData;
 }
 
-
 module.exports = {
     zombieApocalypse
 }
