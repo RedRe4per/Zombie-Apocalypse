@@ -1,6 +1,7 @@
 import { React } from "react";
 import styled from 'styled-components';
 import { nanoid } from 'nanoid'
+import PropTypes from 'prop-types';
 
 const GridWrapper = styled.div`
     height: 710px;
@@ -31,6 +32,7 @@ const GridElement = styled.div`
 
 
 const GridBox = (props) => {
+
     const { resultData: data } = props;
     if (Object.keys(data).length === 0) return <GridWrapper><Info>Please input data and submit! ^_^</Info></GridWrapper>;
 
@@ -43,7 +45,7 @@ const GridBox = (props) => {
             y: Math.floor(i / gridSize),
             obj: []
         }
-    };
+    }
 
     creatures.forEach((creature) => {
         let gridIndex = gridArr.findIndex((grid) => grid.x === creature.x && grid.y === creature.y);
@@ -73,5 +75,16 @@ const GridBox = (props) => {
         </GridWrapper>
     );
 }
+
+GridBox.propTypes = {
+    resultData: PropTypes.shape({
+        gridSize: PropTypes.number,
+        outputObj: PropTypes.shape({
+            creatures: PropTypes.arrayOf(PropTypes.object).isRequired,
+            zombies: PropTypes.arrayOf(PropTypes.object).isRequired
+        })
+    })
+}
+
 
 export default GridBox;

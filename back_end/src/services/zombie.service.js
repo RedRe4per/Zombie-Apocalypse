@@ -25,7 +25,7 @@ function getZombiePosition(validatedData) {
             if (obj.action.length > 0) {
                 move(obj, gridSize);
                 log += `\n zombie ${obj.zombieIndex} moved to (${obj.x},${obj.y});`;
-            };
+            }
         });
 
         //check infection, give role & action to new zombie
@@ -36,8 +36,8 @@ function getZombiePosition(validatedData) {
                     currentZombieIndex = infectCreature(objArr, commands, infectionIndex, currentZombieIndex);
                     stepQty = commands.length;
                     log += `\n zombie ${obj.zombieIndex} infected creature at (${obj.x},${obj.y});`;
-                };
-            };
+                }
+            }
         });
 
         //sorting
@@ -60,9 +60,9 @@ function move(obj, gridSize) {
         case 'L': obj.x = --obj.x < 0 ? gridSize - 1 : obj.x--; break;
         case 'R': obj.x = ++obj.x > gridSize - 1 ? 0 : obj.x++; break;
         default: obj;
-    };
+    }
     obj.action.shift();
-};
+}
 
 function infectCreature(objArr, commands, infectionIndex, currentZombieIndex) {
     

@@ -1,5 +1,6 @@
 import { React } from "react";
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const LogArea = styled.div`
     background-color: #9AA88F;
@@ -56,6 +57,12 @@ const Log = (props) => {
             </DataArea>
         </LogArea>
     );
+}
+
+Log.propTypes = {
+    resultData: PropTypes.shape({
+        log: PropTypes.string
+    })
 }
 
 export default Log;

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import PropTypes from 'prop-types';
 
 const HeaderBar = styled.div`
     display: flex;
@@ -116,7 +117,7 @@ const Header = (props) => {
         if (!permission) return;
         if (creatures.findIndex(creature => creature.x === zombiePosition.x && creature.y === zombiePosition.y) > -1) {
             return toast.error('Initial position of zombie cannot in creature position.');
-        };
+        }
 
         const dataObj = { gridSize, zombie: zombiePosition, creatures, commands: action };
         axios({
@@ -190,5 +191,9 @@ const Header = (props) => {
 
     );
 };
+
+Header.propTypes = {
+    getResultData: PropTypes.func
+}
 
 export default Header;
