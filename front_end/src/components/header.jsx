@@ -1,6 +1,6 @@
 import { React, useState } from "react";
 import styled from 'styled-components';
-import axios from 'axios';
+import axios from '../api/zombieApi';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import PropTypes from 'prop-types';
@@ -122,7 +122,7 @@ const Header = (props) => {
         const dataObj = { gridSize, zombie: zombiePosition, creatures, commands: action };
         axios({
             method: 'POST',
-            url: 'http://127.0.0.1:8000/v1/zombie',
+            url: '/zombie',
             data: dataObj
         }).then(response => {
             getResultData(response.data);

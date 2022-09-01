@@ -1,5 +1,6 @@
 .env
 
+NODE_ENV === 'production'
 PORT=8000 
 
 
